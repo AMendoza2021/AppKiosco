@@ -1,0 +1,7 @@
+{
+  "name": "Checador",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

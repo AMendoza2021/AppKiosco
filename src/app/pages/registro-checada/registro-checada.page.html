@@ -1,0 +1,160 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      <div style="display:flex; align-items: center;justify-content: center;">
+        Registro Checadas 
+      </div>      
+    </ion-title>
+    <div style="display:flex; align-items: right;justify-content: right;">
+      <ion-button  size="small" (click)='Logout()' color="danger" fill="outline">Salir&nbsp;
+        <ion-icon name="log-out-outline"></ion-icon>
+      </ion-button>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <div id="container">
+      <div class="row" style="align-items:flex-start;">
+        <ion-item class="item-content">
+          <ion-label position="floating">Número de empleado</ion-label>
+          <ion-input  type="text" [(ngModel)]="NoEmpleado_" maxlength="6" (keypress)="numberOnlyValidation($event)" readonly></ion-input>
+        </ion-item>
+        <br>
+    </div>
+    <div class="row" style="align-items:flex-start;">   
+        <div class="col-xs-2 col-sm-4 col-md-3 col-md-offset-1">
+          <ion-button expand='block' size="large" (click)='addNumber(1)' color="primary" fill="outline"> 1
+        </ion-button>
+        </div>
+        <div class="col-xs-2 col-sm-4 col-md-3 col-md-offset-1">
+          <ion-button expand='block' size="large" (click)='addNumber(2)' color="primary" fill="outline">  2
+        </ion-button>
+        </div>
+        <div class="col-xs-2 col-sm-4 col-md-3 col-md-offset-1">
+          <ion-button expand='block' size="large" (click)='addNumber(3)' color="primary" fill="outline"> 3
+        </ion-button>
+        </div>
+
+        <div  class="col-xs-2 col-sm-4 col-md-3 col-md-offset-1">
+          <ion-button expand='block' size="large" (click)='addNumber(4)' color="primary" fill="outline"> 4
+        </ion-button>
+        </div>
+
+        <div class="col-xs-4 col-sm-4 col-md-3 col-md-offset-1">
+          <ion-button expand='block' size="large" (click)='addNumber(5)' color="primary" fill="outline">5
+        </ion-button>
+        </div>
+        <div class="col-xs-4 col-sm-4 col-md-3 col-md-offset-1">
+          <ion-button expand='block' size="large" (click)='addNumber(6)' color="primary" fill="outline">6
+        </ion-button>
+        </div>
+        <div class="col-xs-4 col-sm-4 col-md-3 col-md-offset-1">
+          <ion-button expand='block' size="large" (click)='addNumber(7)' color="primary" fill="outline">7
+        </ion-button>
+        </div>
+        <div class="col-xs-4 col-sm-4 col-md-3 col-md-offset-1">
+          <ion-button expand='block' size="large" (click)='addNumber(8)' color="primary" fill="outline">8
+        </ion-button>
+        </div>
+        <div class="col-xs-4 col-sm-4 col-md-3 col-md-offset-1">
+          <ion-button expand='block' size="large" (click)='addNumber(9)' color="primary" fill="outline">9
+        </ion-button>
+        </div>
+        <div class="col-xs-4 col-sm-4 col-md-3 col-md-offset-1">
+          <ion-button expand='block' size="large" (click)='addNumber(0)' color="primary" fill="outline">0
+        </ion-button>
+        </div>
+        <div class="col-xs-4 col-sm-4 col-md-3 col-md-offset-1">
+          <ion-button expand='block' size="large" (click)='ClearInput()' color="danger" fill="outline">
+            <ion-icon name="close-outline"></ion-icon>
+        </ion-button>
+        </div>
+        <div class="col-xs-4 col-sm-4 col-md-3 col-md-offset-1">
+          <ion-button expand='block' size="large" (click)='RemoveNumber()' color="warning" fill="outline">
+            <ion-icon name="backspace-outline"></ion-icon>            
+        </ion-button>
+        </div>
+    </div> 
+    <hr>
+
+      <div class="row" style="align-items:flex-start;">
+          <div class="col-xs-12 col-sm-6 col-md-4 col-md-offset-1">
+            <ion-button expand='block' size="large" (click)='PostChecada(1)' color="dark" fill="outline"> 
+              <small>Entrada Laborar</small>
+              <ion-img   style="width:35px"  src="..\assets\img\work.png"></ion-img>         
+          </ion-button>
+          </div>
+          <div class="col-xs-12 col-sm-6 col-md-4 col-md-offset-1">
+            <ion-button expand='block' size="large" (click)='PostChecada(2)' color="dark" fill="outline">
+              <small>Salida&nbsp;&nbsp;Laborar&nbsp;&nbsp;</small>
+              <ion-img   style="width:35px"  src="..\assets\img\work.png"></ion-img>                 
+          </ion-button>
+          </div>
+          <div class="col-xs-12 col-sm-6 col-md-4 col-md-offset-1">
+            <ion-button expand='block' size="large" (click)='PostChecada(3)' color="success" fill="outline"> 
+              <small>Salida Comer</small> 
+              <ion-img   style="width:35px"  src="..\assets\img\food.png"></ion-img> 
+          </ion-button>
+          </div>
+
+          <div  class="col-xs-12 col-sm-6 col-md-4 col-md-offset-1">
+            <ion-button expand='block' size="large" (click)='PostChecada(4)' color="success" fill="outline"> 
+              <small>Regreso comer</small>
+                <ion-img   style="width:35px"  src="..\assets\img\food.png"></ion-img> 
+          </ion-button>
+          </div>
+
+          <div class="col-xs-12 col-sm-6 col-md-4 col-md-offset-1">
+            <ion-button expand='block' size="large" (click)='PostChecada(5)' color="medium" fill="outline">
+              <small>Salida Permiso</small>
+              <ion-img   style="width:35px"  src="..\assets\img\clock.png"></ion-img> 
+          </ion-button>
+          </div>
+
+          <div class="col-xs-12 col-sm-6 col-md-4 col-md-offset-1">
+            <ion-button expand='block' size="large" (click)='PostChecada(6)' color="medium" fill="outline">
+              <small>Regreso Permiso</small> 
+              <ion-img   style="width:35px"  src="..\assets\img\clock.png"></ion-img> 
+          </ion-button>
+          </div>
+      </div> 
+
+
+      <div style="display:flex; align-items: center;justify-content: center;">
+        <ion-list>
+            <ion-label>Ultimos Registros: </ion-label>         
+        </ion-list> 
+      </div>
+      
+      <div style="display:flex; align-items: center;justify-content: center;">       
+          <ion-item *ngFor="let item of items" >
+            <ion-avatar>
+              <img [src]="item.img_">
+            </ion-avatar >
+            <ion-label   background="warning" color="dark" >
+              <b> {{item.NoEmpleado}} </b> {{item.Nombre}} <br><b> {{item.acciones}}</b>  </ion-label>  
+          </ion-item>
+      </div>
+      
+
+      <div class="row" >
+        <div class="col-xs-12 col-sm-12 col-md-12 col-md-offset-1" style="display:flex; align-items: center;justify-content: center;">
+          <ion-button  size="large" (click)='SendRegistersLocal()' color="secondary" fill="outline"> 
+            <small>Registros locales</small>
+            
+            <ion-icon style="padding-left: 5px;" name="cloud-upload" color="secondary"></ion-icon>         
+        </ion-button>
+        </div> 
+    </div> 
+
+  </div>
+
+</ion-content>
+
+<!-- <ion-footer>
+  <ion-toolbar>
+    <ion-title>Footer</ion-title>
+  </ion-toolbar>
+</ion-footer> -->

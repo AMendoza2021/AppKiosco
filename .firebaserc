@@ -1,0 +1,7 @@
+{
+  "projects": {
+    "victory-proyect": "victory-enterprises-app",
+    "default": "victory-enterprises-app"
+  },
+  "targets": {}
+}
